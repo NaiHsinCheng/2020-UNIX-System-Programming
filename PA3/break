@@ -1,0 +1,33 @@
+#!/usr/bin/tcsh
+
+if !( -f ~/_/i/i/axe ) then
+ echo "You have nothing you can use to break things."
+
+else if ( $# == 0 ) then
+  echo "You must supply an object."
+
+else if !( -f ./$1 ) then
+  echo "I don't see that here."
+  
+else if ( $1 != "weight" && $1 != "towel" && $1 != "box" && $1 != "disk" && $1 != "gold" && $1 != "hole" && $1 != "lamp" && $1 != "preserver" && $1 != "bar" && $1 != "diamond" && $1 != "key" && $1 != "cable" && $1 != "shovel" && $1 != "silver" && $1 != "paper" && $1 != "axe" && $1 != "ladder" && $1 != "bracelet" && $1 != "wax" ) then
+  echo "I don't know what that is."
+
+else if ( -f ./$1 && $1 != "cable" && $1 != "ladder" ) then
+  rm -f $1
+  echo "Your axe breaks it into a million pieces."
+  
+else if ( $1 == "cable" ) then
+  echo "As you break the ethernet cable, everything starts to blur.  You collapse"
+  echo "for a moment, then straighten yourself up."
+  echo "\nConnection closed."
+  exit 0
+  
+else if ( $1 == "ladder" ) then
+  echo "Your axe shatters into a million pieces."
+
+else
+  echo "You take the object in your hands and swing the axe. Unfortunately, you miss the object and slice off your hand. You bleed to death."
+  
+endif
+
+exit 1

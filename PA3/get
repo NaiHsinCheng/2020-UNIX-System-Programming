@@ -1,0 +1,19 @@
+#!/usr/bin/tcsh
+
+if ( $1 == "weight" && -f ./button ) then
+    rm -f d
+    rm -f e
+    rm -f ne
+    rm -f se
+    rm -f sw
+    rm -f w
+    mv nw .nw
+    mv .u u
+endif
+
+mv ./$1 ~/_/i/_ >&~/X
+
+cd ~/_/i/_
+
+mv ~/_/i/_/* ~/_/i/i >&~/X && echo "Taken." || echo "There are nothing."
+
