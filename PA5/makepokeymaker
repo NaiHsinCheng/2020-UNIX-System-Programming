@@ -1,0 +1,19 @@
+#!/usr/bin/sed -f
+
+1i mkdir pokey pokey/rooms pokey/usr pokey/usr/toukmond;seq 2306 > pokey/usr/toukmond/cd;seq 2306 > pokey/usr/toukmond/ls;seq 2306 > pokey/usr/toukmond/echo;seq 2306 > pokey/usr/toukmond/key;seq 2306 > pokey/usr/toukmond/ftp;seq 2306 > pokey/usr/toukmond/pwd;seq 2306 > pokey/usr/toukmond/rlogin;seq 2306 > pokey/usr/toukmond/ssh;seq 2306 > pokey/usr/toukmond/uncompress;seq 2306 > pokey/usr/toukmond/cat
+
+1a mv ~/_i/i/key pokey/usr/toukmond &>/dev/null
+
+/^$/d
+/filenamesdir/d
+/I don't/d
+s#=.*\(\./.*/\)d.*=#\1#g
+h;z
+n;y#ABCDEFGHIJKLMNOPQRSTUVWXYZ /#abcdefghijklmnopqrstuvwxyz--#
+G
+s#\n#@#g
+
+
+s#\(.*\)@\(.*\)#mkdir pokey/rooms/\1\ncp \2*[darokvw][maxslept]*[a-z] pokey/rooms/\1\ntouch -r pokey/rooms/\1 \21#g
+
+$!N;$a chmod 755 -R pokey

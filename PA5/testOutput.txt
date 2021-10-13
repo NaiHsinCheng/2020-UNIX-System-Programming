@@ -1,0 +1,10 @@
+____________________
+testBrokenLampDeath:
+_________________________
+testSteppedIntoDarkDeath:
+_________________
+testDrownedDeath:
+________________
+testBurnedDeath:
+______________
+testBledDeath:
